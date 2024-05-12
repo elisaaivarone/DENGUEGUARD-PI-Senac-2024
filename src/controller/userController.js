@@ -17,33 +17,36 @@ export const createUser = async (req, res) => {
 };
 
 // Obter todos os usuários
-export const getUsers = async () => {
+export const getUsers = async (req, res) => {
   try {
     const connection = await pool.getConnection();
     const [rows] = await connection.query('SELECT * FROM tb_users');
     connection.release();
-    return rows;
+    res.status(200).json(rows);
   } catch (error) {
     console.error('Erro ao obter usuários:', error);
-    throw error;
+    res.status(500).json({ message: 'Error fetching users' });
   }
 };
 
 // Obter usuário por ID
-export const getUserById = async (id) => {
+export const getUserById = async (req, res) => {
+  const { id } = req.params;
   try {
     const connection = await pool.getConnection();
     const [rows] = await connection.query('SELECT * FROM tb_users WHERE id_user = ?', [id]);
     connection.release();
-    return rows[0];
+    res.status(200).json(rows[0]);
   } catch (error) {
     console.error('Erro ao obter usuário por ID:', error);
-    throw error;
+    res.status(500).json({ message: 'Error fetching user by ID' });
   }
 };
 
 // Atualizar usuário por ID
-export const updateUser = async (id, username, email, password, address) => {
+export const updateUser = async (req, res) => {
+  const { id } = req.params;
+  const { username, email, password, address } = req.body;
   try {
     const connection = await pool.getConnection();
     await connection.query(
@@ -51,20 +54,23 @@ export const updateUser = async (id, username, email, password, address) => {
       [username, email, password, address, id]
     );
     connection.release();
+    res.status(200).json({ message: 'User updated successfully' });
   } catch (error) {
     console.error('Erro ao atualizar usuário:', error);
-    throw error;
+    res.status(500).json({ message: 'Error updating user' });
   }
 };
 
 // Excluir usuário por ID
-export const deleteUser = async (id) => {
+export const deleteUser = async (req, res) => {
+  const { id } = req.params;
   try {
     const connection = await pool.getConnection();
     await connection.query('DELETE FROM tb_users WHERE id_user = ?', [id]);
     connection.release();
+    res.status(200).json({ message: 'User deleted successfully' });
   } catch (error) {
     console.error('Erro ao excluir usuário:', error);
-    throw error;
+    res.status(500).json({ message: 'Error deleting user' });
   }
 };
