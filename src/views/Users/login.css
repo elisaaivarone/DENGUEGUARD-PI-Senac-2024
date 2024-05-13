@@ -1,0 +1,40 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #47BBC2, #22595C); 
+    color: #FFFFFF;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    width: 400px;
+    height: 700;
+    padding: 20px;
+    margin-top: 0%;
+    background-color: #F9F9F9; 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.title-login {
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    color: black;
+    display: block;
+}
+
+
