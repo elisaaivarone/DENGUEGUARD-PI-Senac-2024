@@ -16,14 +16,18 @@ body {
     display: flex;
     flex-direction: column;
     width: 430px;
-    height: 700;
 }
 
-.form-group {
+.login-group,
+.register-group  {
     padding: 40px;
     margin-top: 0%;
     background-color: #F9F9F9; 
     border-radius: 10px;
+}
+
+.register-group {
+    width: 700px;
 }
 
 .title-logo {
@@ -34,7 +38,8 @@ body {
     margin-bottom: 30px;
 }
 
-.title-login {
+.title-login,
+.title-register {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-size: 18px;
@@ -63,6 +68,12 @@ body {
     background: linear-gradient(to right, #31D5DF, #22595C  ); 
     border-radius: 24px;
     margin-top: 30px;
+    font-family: "Poppins", sans-serif;
+    color: #FFFFFF;
+  }
+
+  .btn-login:hover {
+    opacity: 0.7;
   }
 
 .btn-midia p {
@@ -73,4 +84,34 @@ body {
 
 .btn-account {
     margin-top: 100px;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #27A4C4;
+    color: white;
+  }
+
+  .fa-google {
+    background: #DC4E41;
+    color: #FFFFFF;
+  }
+
+.register-form {
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.form-label {
+    color: #000000;
 }
