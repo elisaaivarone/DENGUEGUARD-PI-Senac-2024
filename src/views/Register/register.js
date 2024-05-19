@@ -1,4 +1,4 @@
 document.getElementById('newLogin').addEventListener('click', function() {
-    window.location.href = '/src/views/Users/login.html';
+    window.location.href = '/src/views/Login/login.html';
   });
 
