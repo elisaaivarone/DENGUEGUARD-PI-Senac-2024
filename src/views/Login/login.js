@@ -1,5 +1,5 @@
 
   document.getElementById('newAccount').addEventListener('click', function() {
-    window.location.href = '/src/views/Users/register.html';
+    window.location.href = '/src/views/Register/register.html';
   });
 
