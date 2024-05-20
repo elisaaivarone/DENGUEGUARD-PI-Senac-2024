@@ -16,6 +16,23 @@ export const createUser = async (req, res) => {
   }
 };
 
+export const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const connection = await pool.getConnection();
+    const [rows] = await connection.query('SELECT * FROM tb_users WHERE email = ? AND password = ?', [email, password]);
+    connection.release();
+    if (rows.length > 0) {
+      res.json({ message: 'Login successful', username: rows[0].username });
+    } else {
+      res.status(401).json({ message: 'Invalid email or password' });
+    }
+  } catch (error) {
+    console.error('Error during login:', error);
+    res.status(500).json({ message: 'Error during login' });
+  }
+};
+
 // Obter todos os usuários
 export const getUsers = async (req, res) => {
   try {
