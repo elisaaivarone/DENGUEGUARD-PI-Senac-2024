@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH4u65Yc82f4fm4w0HGI-_S54I9HqYHMA">
+    </script>
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navegação Lateral -->
+        <nav class="side-nav">
+            <div class="logo">
+                <img src="/src/assets/senac-logo.png" alt="Logo">
+            </div>
+            <hr>
+            <h2 class="title-nav">Painel de Controle</h2>
+            <hr>
+            <label for="cidade">Cidade:</label>
+            <select id="cidade">
+                <option value="sao-paulo">São Paulo</option>
+            </select>
+            <label for="zona">Zona:</label>
+            <select id="select-region">
+                <option value="centerZone">Selecione:</option>
+                <option value="centerZone">Centro</option>
+                <option value="eastZone">Zona Leste</option>
+                <option value="westZone">Zona Oeste</option>
+                <option value="southZone">Zona Sul</option>
+                <option value="northZone">Zona Norte</option>
+            </select>
+        </nav>
+
+        <!-- Navegação Superior -->
+        <div class="main-content">
+            
+            <nav class="top-nav">
+                <input type="text" class="search" placeholder="Pesquisar...">
+                <ul class="nav-icons">
+                    <li><a href="#"><img src="alert-icon.png" alt="Alert Icon"></a></li>
+                    <li><a href="#"><img src="profile-icon.png" alt="Profile Icon"></a></li>
+                </ul>
+            </nav>
+
+            <!-- Navegação de Links -->
+            <nav class="link-nav">
+                <ul>
+                    <li><a class="nav-link active" href="#mapa" data-target="mapa">Mapa</a></li>
+                    <li><a class="nav-link" href="#painel" data-target="painel">Painel Geral</a></li>
+                    <li><a class="nav-link" href="#sintomas" data-target="sintomas">Sintomas</a></li>
+                    <li><a class="nav-link" href="#informacoes" data-target="informacoes">Informações</a></li>
+                </ul>
+            </nav>  
+            <hr>
+
+            <!-- Conteúdo das Páginas -->
+            <div class="page-content">
+                <div id="mapa" class="content-section active">
+                    <div id="map"></div>
+                </div>
+                <div id="painel" class="content-section">
+                    <h1>Painel Geral</h1>
+                    <p>Conteúdo da página de painel geral.</p>
+                </div>
+                <div id="sintomas" class="content-section">
+                    <h1>Sintomas</h1>
+                    <p>Conteúdo da página de sintomas.</p>
+                </div>
+                <div id="informacoes" class="content-section">
+                    <h1>Informações</h1>
+                    <p>Conteúdo da página de informações.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
