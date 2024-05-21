@@ -1,6 +1,6 @@
 
   document.getElementById('newAccount').addEventListener('click', function() {
-    window.location.href = '/src/views/Register/register.html';
+    window.location.href = '/src/views/register.html';
   });
 
   document.getElementById('login-form').addEventListener('submit', async (event) => {
