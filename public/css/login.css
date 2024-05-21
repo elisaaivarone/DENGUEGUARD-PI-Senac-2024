@@ -25,11 +25,17 @@ body {
     background-color: #F9F9F9; 
     border-radius: 10px;
 }
+.user-profile {
+  background-color: #31D5DF;
+}
 
 .register-group {
     width: 700px;
 }
 
+fa fa-user {
+  background-color: #47BBC2;
+}
 .title-logo {
     font-family: "Poppins", sans-serif;
     font-weight: 800;

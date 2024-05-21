@@ -1,5 +1,6 @@
 import pool from '../models/connections.js';
 
+//Criar usuario
 export const createUser = async (req, res) => {
   const { username, email, password, address } = req.body;
   try {
@@ -16,6 +17,7 @@ export const createUser = async (req, res) => {
   }
 };
 
+//Realizar login
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -89,5 +91,21 @@ export const deleteUser = async (req, res) => {
   } catch (error) {
     console.error('Erro ao excluir usuário:', error);
     res.status(500).json({ message: 'Error deleting user' });
+  }
+};
+
+// Função para obter o perfil do usuário pelo ID
+export const getUserProfile = async (req, res) => {
+  const userId = req.params.id; 
+  try {
+      const user = await pool.findByPk(userId); 
+      if (!user) {
+          return res.status(404).json({ message: 'Usuário não encontrado' });
+      }
+      
+      return res.status(200).json(user);
+  } catch (error) {
+      console.error('Erro ao obter perfil do usuário:', error);
+      return res.status(500).json({ message: 'Erro ao obter perfil do usuário' });
   }
 };
